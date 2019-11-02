@@ -1,5 +1,7 @@
 {
   "name": "reflect",
-  "integrations": {},
+  "integrations": {
+    "capacitor": {}
+  },
   "type": "angular"
 }

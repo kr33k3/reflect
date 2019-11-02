@@ -1,0 +1,8 @@
+{
+  "appId": "com.unknown.philosopher",
+  "appName": "reflect",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www",
+  "cordova": {}
+}
