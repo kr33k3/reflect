@@ -1,0 +1,6 @@
+ion-card {
+    transition: all .2s;
+}
+ion-card:active {
+    transform: scale(.9);
+}
