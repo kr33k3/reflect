@@ -1,9 +1,18 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>View</ion-title>
+  <ion-toolbar color="primary">
+    <ion-title text-center>View Memories</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+
+  <ion-card *ngFor="let memory of memories">
+    <ion-card-header>
+      <ion-card-title>{{memory.Title}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      {{memory.ContentList[0].Body}}
+    </ion-card-content>
+  </ion-card>
 
 </ion-content>

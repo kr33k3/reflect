@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';\
+import { Injectable } from '@angular/core';
 import { Storage } from '@ionic/storage';
 
 @Injectable({
@@ -25,7 +25,7 @@ export class MemoryService {
     return this.storage.get('memories')
   }
 
-  generateMemories(count: Number) {
+  private generateMemories(count: Number) {
     var memories = []
     for (var i = 0; i < count; i++) {
       memories.push(this.generateMemory())
@@ -33,7 +33,7 @@ export class MemoryService {
     return memories
   }
 
-  generateMemory(): Memory {
+  private generateMemory(): Memory {
     return {
       Title: "Bushido",
       Type: "Journal",
@@ -48,39 +48,38 @@ export class MemoryService {
   }
 }
 
-
-interface Memory {
+export interface Memory {
   Title: string;
   Type: string;
   ContentList: Content[];
   DateCreated: Date;
 }
 
-interface Content {
+export interface Content {
   Title: string;
   Body: string;
   Attachments: Attachment[];
   Tags: Link[];
 }
 
-interface Attachment {
+export interface Attachment {
   Base64: string;
   Title: string;
   Description: string;
   Tags: Link[];
 }
 
-interface Tag {
+export interface Tag {
   Title: string;
   TagId: string;
 }
 
-interface Link {
+export interface Link {
   TagId: string;
   AssociatedGuid: string;
 }
 
-interface Reflection {
+export interface Reflection {
   Confidence: number;
   ReflectionDate: Date;
 }
