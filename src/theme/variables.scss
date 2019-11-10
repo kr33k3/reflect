@@ -74,4 +74,16 @@
   --ion-color-light-contrast-rgb: 0, 0, 0;
   --ion-color-light-shade: #d7d8da;
   --ion-color-light-tint: #f5f6f9;
+
+  --ionc-color-content:#00c98a;
+  --ion-color-light-rgb: 0, 201, 138;
+  --ion-color-light-contrast: #ffffff;
+  --ion-color-light-contrast-rgb: 0, 0, 0;
+  --ion-color-light-shade: #01ac76;
+  --ion-color-light-tint: #16b986;
+
+  ion-fab-button {
+    --border-radius : 12px;   
+  }
+
 }

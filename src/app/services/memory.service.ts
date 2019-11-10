@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Storage } from '@ionic/storage';
+import { Memory } from '../models';
 
 @Injectable({
   providedIn: 'root'
@@ -46,40 +47,4 @@ export class MemoryService {
       DateCreated: new Date()
     }
   }
-}
-
-export interface Memory {
-  Title: string;
-  Type: string;
-  ContentList: Content[];
-  DateCreated: Date;
-}
-
-export interface Content {
-  Title: string;
-  Body: string;
-  Attachments: Attachment[];
-  Tags: Link[];
-}
-
-export interface Attachment {
-  Base64: string;
-  Title: string;
-  Description: string;
-  Tags: Link[];
-}
-
-export interface Tag {
-  Title: string;
-  TagId: string;
-}
-
-export interface Link {
-  TagId: string;
-  AssociatedGuid: string;
-}
-
-export interface Reflection {
-  Confidence: number;
-  ReflectionDate: Date;
 }

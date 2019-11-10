@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { MemoryService, Memory, Content } from '../services/memory.service';
+import { MemoryService } from '../services/memory.service';
+import { Memory } from '../models';
 
 @Component({
   selector: 'app-view',
@@ -18,5 +19,7 @@ export class ViewPage implements OnInit {
       console.log(data)
     })
   }
+
+  
 
 }

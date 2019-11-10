@@ -1,0 +1,29 @@
+<form [formGroup]="contentForm">
+  <ion-card style="width: 80%;">
+    <ion-card-header>
+        <ion-item>
+            <ion-label position="floating">Title</ion-label>
+            <ion-input [readonly]="preview" formControlName="Title"></ion-input>
+        </ion-item>
+    </ion-card-header>
+    <ion-card-content>
+        <ion-item>
+            <ion-label position="floating">Body</ion-label>
+            <ion-textarea [autoGrow]="!preview" [readonly]="preview" rows="3" formControlName="Body"></ion-textarea>
+        </ion-item>
+    </ion-card-content>
+    <ion-fab vertical="top" horizontal="end" slot="fixed">
+        <ion-fab-button (click)="save()" size="small" color="secondary">
+            <ion-icon name="add"></ion-icon>
+        </ion-fab-button>
+      <ion-fab-list side="start">
+        <ion-fab-button (click)="save()" size="small" color="success">
+          <ion-icon name="checkmark"></ion-icon>
+        </ion-fab-button>
+        <ion-fab-button (click)="remove()" color="danger">
+            <ion-icon name="trash"></ion-icon>
+        </ion-fab-button>
+      </ion-fab-list>
+    </ion-fab>
+  </ion-card>
+</form>

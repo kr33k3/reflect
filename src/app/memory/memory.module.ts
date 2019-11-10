@@ -1,22 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
-import { MemoryModule } from '../memory/memory.module';
-
 
 import { IonicModule } from '@ionic/angular';
 
-import { MemoryInputComponent } from '../memory/memory-input/memory-input.component';
+import { MemoryInputComponent } from './memory-input/memory-input.component';
 import { ContentInputComponent } from '../content/content-input/content-input.component';
 
-import { ViewPage } from './view.page';
-
 const routes: Routes = [
-  {
-    path: '',
-    component: ViewPage
-  }
+   {
+     path: '',
+     component: MemoryInputComponent
+   }
 ];
 
 @NgModule({
@@ -25,9 +21,8 @@ const routes: Routes = [
     FormsModule,
     IonicModule,
     RouterModule.forChild(routes),
-    MemoryModule
+    ReactiveFormsModule
   ],
-  declarations: [ViewPage],
-  entryComponents: [ContentInputComponent ]
+  declarations: [ ContentInputComponent, MemoryInputComponent ]
 })
-export class ViewPageModule {}
+export class MemoryModule {}
