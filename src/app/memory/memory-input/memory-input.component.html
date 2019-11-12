@@ -4,6 +4,14 @@
       <ion-label position="floating">Title</ion-label>
       <ion-input formControlName="Title"></ion-input>
     </ion-item>
+    <ion-item>
+      <ion-label position="floating">Page Start</ion-label>
+      <ion-input formControlName="PageStart" type="number"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Page End</ion-label>
+      <ion-input formControlName="PageEnd" type="number"></ion-input>
+    </ion-item>
     <app-content-input *ngFor="let content of memory.ContentList" preview="false" [content]="content"></app-content-input>
   </form>
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">

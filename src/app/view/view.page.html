@@ -11,10 +11,11 @@
 
   <ion-card *ngFor="let memory of memories">
     <ion-card-header>
+      <ion-card-subtitle>pgs. {{memory.PageStart}}-{{memory.PageEnd}}</ion-card-subtitle>
       <ion-card-title>{{memory.Title}}</ion-card-title>
     </ion-card-header>
     <ion-card-content>
-      {{memory.ContentList[0].Body}}
+      <ion-label *ngFor="let content of memory.ContentList" style="display: block">{{content.Title}}</ion-label> 
     </ion-card-content>
   </ion-card>
 

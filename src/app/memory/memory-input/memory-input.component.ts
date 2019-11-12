@@ -23,6 +23,8 @@ export class MemoryInputComponent implements OnInit {
     this.memoryForm = this.formBuilder.group({
       'Title': [this.memory.Title, Validators.required],
       'Type': [this.memory.Type, Validators.required],
+      'PageStart': [this.memory.PageStart, Validators.required],
+      'PageEnd': [this.memory.PageEnd, Validators.required],
       'ContentList': [this.memory.ContentList, Validators.required],
       'DateCreated': [this.memory.DateCreated, Validators.required]
     })  

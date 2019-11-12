@@ -30,7 +30,7 @@ export class ViewPage implements OnInit {
 
     modal.onDidDismiss().then((data) =>
     {
-      if (data == null) {
+      if (data.data == null) {
         console.log('No Memory Returned')
         return
       }

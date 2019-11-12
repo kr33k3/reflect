@@ -13,6 +13,8 @@ export class MemoryNewComponent implements OnInit {
   constructor(private modalController: ModalController) { 
     this.memory = {
       Title: 'Memory New',
+      PageStart: null,
+      PageEnd: null,
       ContentList: [{Title: '', Body:'', Attachments: [], Tags: []}],
       DateCreated: new Date(),
       Type: ''

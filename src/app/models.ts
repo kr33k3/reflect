@@ -1,5 +1,7 @@
   export interface Memory {
     Title: string;
+    PageStart: number;
+    PageEnd: number;
     Type: string;
     ContentList: Content[];
     DateCreated: Date;

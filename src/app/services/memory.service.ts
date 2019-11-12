@@ -38,6 +38,8 @@ export class MemoryService {
     return {
       Title: "Bushido",
       Type: "Journal",
+      PageStart: 5,
+      PageEnd: 60,
       ContentList: [{
         Title: 'Example One',
         Body: 'This is some common description or record',
