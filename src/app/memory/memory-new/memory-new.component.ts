@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ModalController } from '@ionic/angular';
+
+import { Memory } from '../../models';
 
 @Component({
   selector: 'app-memory-new',
@@ -6,9 +9,25 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./memory-new.component.scss'],
 })
 export class MemoryNewComponent implements OnInit {
-  
-  constructor() { }
+  memory: Memory
+  constructor(private modalController: ModalController) { 
+    this.memory = {
+      Title: 'Memory New',
+      ContentList: [],
+      DateCreated: new Date(),
+      Type: ''
+    }
+  }
 
   ngOnInit() {}
+
+  onSave() {
+    console.log(this.memory)
+    this.modalController.dismiss()
+  }
+
+  onDismiss() {
+    this.modalController.dismiss()
+  }
 
 }

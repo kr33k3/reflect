@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Memory, Content } from 'src/app/models';
+import { Title } from '@angular/platform-browser';
 
 
 @Component({
@@ -15,30 +16,36 @@ export class MemoryInputComponent implements OnInit {
 
 
   constructor(private formBuilder: FormBuilder) {
-    this.contentList = [{Title: "Other Title", Body: "YADADADADA", Tags:[], Attachments: [] }]
-    if (this.memory == null) {
-      this.memory = {
-        Title: 'The Title',
-        Type: 'The Type',
-        ContentList: [],
-        DateCreated: new Date()
-      }
-    }
-    
+       
+   }
+
+  ngOnInit() {
     this.memoryForm = this.formBuilder.group({
       'Title': [this.memory.Title, Validators.required],
       'Type': [this.memory.Type, Validators.required],
-      'ContentList': [this.contentList, Validators.required],
+      'ContentList': [this.memory.ContentList, Validators.required],
       'DateCreated': [this.memory.DateCreated, Validators.required]
-    })   
-   }
-
-  ngOnInit() {}
+    })  
+    this.onChanged()
+  }
 
 
   addContent() {
     console.log('PUSHING CONTENT');
-    this.contentList.push(null);
+    console.log(this.memory)
+    this.memory.ContentList.push(null);
+   }
+
+   onChanged() {
+    this.memoryForm.get('Title').valueChanges
+    for (const field in this.memoryForm.controls) { // 'field' is a string
+      console.log(field)
+      this.memoryForm.get(field).valueChanges.subscribe(val => {
+        console.log('Value')
+        console.log(val)
+        this.memory[field] = val
+      })
+    }
    }
 
 }

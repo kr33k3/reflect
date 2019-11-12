@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MemoryService } from '../services/memory.service';
 import { Memory } from '../models';
 import { ModalController } from '@ionic/angular';
-import { MemoryInputComponent } from '../memory/memory-input/memory-input.component';
+import { MemoryNewComponent } from '../memory/memory-new/memory-new.component';
 
 @Component({
   selector: 'app-view',
@@ -28,7 +28,7 @@ export class ViewPage implements OnInit {
 
   async presentModal() {
     const modal = await this.modalController.create({
-      component: MemoryInputComponent
+      component: MemoryNewComponent
     })
 
     modal.onDidDismiss().then((data) =>

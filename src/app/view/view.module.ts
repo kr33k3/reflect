@@ -7,9 +7,7 @@ import { MemoryModule } from '../memory/memory.module';
 
 import { IonicModule } from '@ionic/angular';
 
-import { MemoryInputComponent } from '../memory/memory-input/memory-input.component';
-import { ContentInputComponent } from '../content/content-input/content-input.component';
-
+import { MemoryNewComponent } from '../memory/memory-new/memory-new.component';
 import { ViewPage } from './view.page';
 
 const routes: Routes = [
@@ -28,6 +26,6 @@ const routes: Routes = [
     MemoryModule
   ],
   declarations: [ViewPage],
-  entryComponents: [MemoryInputComponent]
+  entryComponents: [MemoryNewComponent]
 })
 export class ViewPageModule {}
