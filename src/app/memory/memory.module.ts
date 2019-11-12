@@ -8,10 +8,12 @@ import { IonicModule } from '@ionic/angular';
 import { MemoryInputComponent } from './memory-input/memory-input.component';
 import { ContentInputComponent } from '../content/content-input/content-input.component';
 
+import { ViewPage } from '../view/view.page';
+
 const routes: Routes = [
    {
      path: '',
-     component: MemoryInputComponent
+     component: ViewPage
    }
 ];
 

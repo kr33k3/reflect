@@ -28,6 +28,6 @@ const routes: Routes = [
     MemoryModule
   ],
   declarations: [ViewPage],
-  entryComponents: [ContentInputComponent ]
+  entryComponents: [MemoryInputComponent]
 })
 export class ViewPageModule {}

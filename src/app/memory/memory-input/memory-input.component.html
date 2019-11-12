@@ -7,7 +7,7 @@
     <app-content-input *ngFor="let content of contentList" preview="true" [content]="content"></app-content-input>
   </form>
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-      <ion-fab-button (click)="addContent()">
+      <ion-fab-button (click)="addContent()" color="secondary">
         <ion-icon name="add"></ion-icon>
       </ion-fab-button>
   </ion-fab>
