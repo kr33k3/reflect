@@ -16,10 +16,7 @@ export class ViewPage implements OnInit {
    }
 
   ngOnInit() {
-     this.memoryService.getMemories().then(data => {
-      this.memories = data
-      console.log(data)
-    })
+     this.refreshMemories();
   }
 
   openAdd() {
@@ -33,9 +30,20 @@ export class ViewPage implements OnInit {
 
     modal.onDidDismiss().then((data) =>
     {
-      console.log('Modal Dismissed')
+      if (data == null) {
+        console.log('No Memory Returned')
+        return
+      }
+      this.memoryService.addMemories(data.data).then(() => this.refreshMemories())
     })
     return await modal.present();
+  }
+
+  refreshMemories() {
+    this.memoryService.getMemories().then(data => {
+      this.memories = data;
+      console.log(data);
+    })
   }
 
 }

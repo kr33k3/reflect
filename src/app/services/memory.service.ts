@@ -12,9 +12,9 @@ export class MemoryService {
   }
 
   addMemories(memory: Memory) {
-    this.getMemories().then(data => {
+    return this.getMemories().then(data => {
       data.push(memory)
-      this.storage.set('memories', data)
+      return this.storage.set('memories', data)
     }).catch(err => {
       console.log('Error Add Memory')
       console.log(memory)

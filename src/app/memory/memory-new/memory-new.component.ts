@@ -23,7 +23,7 @@ export class MemoryNewComponent implements OnInit {
 
   onSave() {
     console.log(this.memory)
-    this.modalController.dismiss()
+    this.modalController.dismiss(this.memory)
   }
 
   onDismiss() {
