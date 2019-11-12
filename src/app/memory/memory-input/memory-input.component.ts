@@ -31,18 +31,18 @@ export class MemoryInputComponent implements OnInit {
 
 
   addContent() {
-    console.log('PUSHING CONTENT');
-    console.log(this.memory)
-    this.memory.ContentList.push(null);
+    this.memory.ContentList.push({
+      Title: '',
+      Body: '',
+      Attachments: [],
+      Tags: []
+    });
    }
 
    onChanged() {
-    this.memoryForm.get('Title').valueChanges
     for (const field in this.memoryForm.controls) { // 'field' is a string
       console.log(field)
       this.memoryForm.get(field).valueChanges.subscribe(val => {
-        console.log('Value')
-        console.log(val)
         this.memory[field] = val
       })
     }

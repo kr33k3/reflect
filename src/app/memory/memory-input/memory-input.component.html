@@ -4,7 +4,7 @@
       <ion-label position="floating">Title</ion-label>
       <ion-input formControlName="Title"></ion-input>
     </ion-item>
-    <app-content-input *ngFor="let content of memory.ContentList" preview="true" [content]="content"></app-content-input>
+    <app-content-input *ngFor="let content of memory.ContentList" preview="false" [content]="content"></app-content-input>
   </form>
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
       <ion-fab-button (click)="addContent()" color="secondary">

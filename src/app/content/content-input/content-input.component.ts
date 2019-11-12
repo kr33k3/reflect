@@ -10,28 +10,26 @@ import { Content } from '../../models';
 })
 export class ContentInputComponent implements OnInit {
   @Input() content: any;
-  @Input() preview = true;
+  @Input() preview = false;
   contentForm: FormGroup;
 
   constructor(private formBuilder: FormBuilder) {
-    console.log('I have awakened')
    }
 
   ngOnInit() {
-    if (this.content == null) {
-      this.content = {
-        Title: '',
-        Body: '',
-        Attachments: [],
-        Tags: []
-      }
-      this.preview = false;
-    }
-
     this.contentForm = this.formBuilder.group({
       'Title': [this.content.Title],
       'Body': [this.content.Body]
     })
+    this.onChanged();
+  }
+
+  onChanged() {
+    for (const field in this.contentForm.controls) { // 'field' is a string
+      this.contentForm.get(field).valueChanges.subscribe(val => {
+        this.content[field] = val
+      })
+    }
   }
 
 }
