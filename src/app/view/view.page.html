@@ -5,10 +5,9 @@
 </ion-header>
 
 <ion-content>
-
   <ion-card *ngFor="let memory of memories">
     <ion-card-header>
-      <ion-card-subtitle>pgs. {{memory.PageStart}}-{{memory.PageEnd}}</ion-card-subtitle>
+      <ion-card-subtitle>pages: {{memory.PageStart}}-{{memory.PageEnd}}</ion-card-subtitle>
       <ion-card-title>{{memory.Title}}</ion-card-title>
     </ion-card-header>
     <ion-card-content>
