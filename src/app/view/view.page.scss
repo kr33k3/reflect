@@ -5,3 +5,35 @@ ion-card {
 ion-card:active {
     transform: scale(.9);
 }
+
+
+@keyframes bounce { 
+    0% {transform: translateY(15px);} 
+    100% {transform: translateY(-15px);} 
+ }
+
+
+//.inertiaLogo {
+//    position: absolute; 
+//    height: 200px;
+//    width: 80px; 
+//    background: cornflowerblue;
+//    bottom: calc(50% - 100px);
+//    left: calc(50% - 40px); 
+//    border-radius: 8px;
+//    border: 2px solid black;
+//}
+//
+//.inertiaLogoDot {
+//    position: absolute; 
+//    height: 80px;
+//    width: 80px; 
+//    background: cornflowerblue;
+//    bottom: calc(50% + 125px);
+//    left: calc(50% - 40px); 
+//    border-radius: 50px;
+//    border: 2px solid black;
+//    animation: bounce 1s ease infinite alternate;
+//}
+
+ 

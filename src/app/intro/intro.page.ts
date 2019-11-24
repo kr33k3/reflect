@@ -10,6 +10,10 @@ export class IntroPage implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    var ionSlides = document.querySelector('ion-slides')
+    //ionSlides.lockSwipes(true)
+    ionSlides.slideNext()
+    console.log('started I think')
   }
 
 }
