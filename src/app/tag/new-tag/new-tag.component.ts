@@ -11,7 +11,8 @@ export class NewTagComponent implements OnInit {
 
   constructor(private modalContrller: ModalController) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+  }
 
   onSave() {
     this.modalContrller.dismiss(this.newTag)

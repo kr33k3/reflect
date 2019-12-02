@@ -1,0 +1,20 @@
+<ion-header>
+    <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+        <ion-button (click)="onDismiss()">
+          <ion-icon slot="icon-only" name="close"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+  
+      <ion-title class="ion-text-center">View Memory</ion-title>
+  
+      <ion-buttons slot="end">
+        <ion-button (click)="onSave()">
+          <ion-icon slot="icon-only" name="checkmark"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <app-memory-input [memory]="memory" ></app-memory-input>
+  </ion-content>

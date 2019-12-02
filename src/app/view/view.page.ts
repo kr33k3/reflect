@@ -3,6 +3,7 @@ import { MemoryService } from '../services/memory.service';
 import { Memory } from '../models';
 import { ModalController } from '@ionic/angular';
 import { MemoryNewComponent } from '../memory/memory-new/memory-new.component';
+import { MemoryViewComponent } from '../memory/memory-view/memory-view.component';
 
 @Component({
   selector: 'app-view',
@@ -20,10 +21,10 @@ export class ViewPage implements OnInit {
   }
 
   openAdd() {
-   this.presentModal();
+   this.newMemory();
   }
 
-  async presentModal() {
+  async newMemory() {
     const modal = await this.modalController.create({
       component: MemoryNewComponent
     })
@@ -44,6 +45,27 @@ export class ViewPage implements OnInit {
       this.memories = data;
       console.log(data);
     })
+  }
+
+  openView(memory) {
+    this.viewMemory(memory)
+  }
+
+  async viewMemory(memory) {
+    const modal = await this.modalController.create({
+      component: MemoryViewComponent,
+      componentProps: {memory: memory}
+    })
+
+    modal.onDidDismiss().then((data) =>
+    {
+      if (data.data == null) {
+        console.log('No Memory Returned')
+        return
+      }
+      //this.memoryService.addMemories(data.data).then(() => this.refreshMemories())
+    })
+    return await modal.present();
   }
 
 }

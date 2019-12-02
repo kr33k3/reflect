@@ -5,7 +5,8 @@
 </ion-header>
 
 <ion-content>
-  <ion-card *ngFor="let memory of memories">
+
+  <ion-card *ngFor="let memory of memories" (click)="openView(memory)">
     <ion-card-header>
       <ion-card-subtitle>pages: {{memory.PageStart}}-{{memory.PageEnd}}</ion-card-subtitle>
       <ion-card-title>{{memory.Title}}</ion-card-title>

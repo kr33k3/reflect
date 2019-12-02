@@ -18,6 +18,6 @@
 <ion-content>
   <ion-item>
     <ion-label position="floating">Tag Title</ion-label>
-    <ion-input [value]="newTag" autocomplete="on" (input)="newTag = $event.target.value"></ion-input>
+    <ion-input id="taginput" [value]="newTag" autocomplete="on" (input)="newTag = $event.target.value" autofocus></ion-input>
   </ion-item>
 </ion-content>

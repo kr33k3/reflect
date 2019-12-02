@@ -12,6 +12,7 @@ import { ViewPage } from '../view/view.page';
 import { MemoryNewComponent } from './memory-new/memory-new.component';
 import { TagComponent } from '..//tag/tag.component';
 import { NewTagComponent } from '../tag/new-tag/new-tag.component';
+import { MemoryViewComponent } from './memory-view/memory-view.component';
 
 const routes: Routes = [
    {
@@ -28,7 +29,7 @@ const routes: Routes = [
     RouterModule.forChild(routes),
     ReactiveFormsModule
   ],
-  declarations: [ ContentInputComponent, MemoryInputComponent, MemoryNewComponent, TagComponent, NewTagComponent ],
-  entryComponents: [NewTagComponent]
+  declarations: [ ContentInputComponent, MemoryInputComponent, MemoryNewComponent, TagComponent, NewTagComponent, MemoryViewComponent ],
+  entryComponents: [NewTagComponent, MemoryViewComponent]
 })
 export class MemoryModule {}
