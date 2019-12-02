@@ -26,7 +26,8 @@ export class ViewPage implements OnInit {
 
   async newMemory() {
     const modal = await this.modalController.create({
-      component: MemoryNewComponent
+      component: MemoryNewComponent,
+      cssClass: 'memory-input-modal'
     })
 
     modal.onDidDismiss().then((data) =>
@@ -54,7 +55,8 @@ export class ViewPage implements OnInit {
   async viewMemory(memory) {
     const modal = await this.modalController.create({
       component: MemoryViewComponent,
-      componentProps: {memory: memory}
+      componentProps: {memory: memory},
+      cssClass: 'memory-input-modal'
     })
 
     modal.onDidDismiss().then((data) =>

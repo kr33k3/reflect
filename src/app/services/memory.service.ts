@@ -40,6 +40,7 @@ export class MemoryService {
       Type: "Journal",
       PageStart: 5,
       PageEnd: 60,
+      Tags: [],
       ContentList: [{
         Title: 'Example One',
         Body: 'This is some common description or record',

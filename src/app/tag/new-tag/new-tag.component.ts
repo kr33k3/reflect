@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 
 @Component({
@@ -21,5 +21,14 @@ export class NewTagComponent implements OnInit {
   onDismiss() {
     this.modalContrller.dismiss()
   }
-
+  @HostListener('window:keyup', ['$event'])
+  keyEvent(event: KeyboardEvent) {
+    if (event.code == 'Enter') {
+      if (this.newTag) {
+        this.onSave()
+      } else {
+        this.onDismiss()
+      }
+    }
+  }
 }
