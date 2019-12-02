@@ -12,6 +12,7 @@
       <ion-label position="floating">Page End</ion-label>
       <ion-input formControlName="PageEnd" type="number"></ion-input>
     </ion-item>
+    <app-tag></app-tag>
     <app-content-input *ngFor="let content of memory.ContentList" preview="false" [content]="content"></app-content-input>
   </form>
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">

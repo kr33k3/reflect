@@ -1,12 +1,12 @@
-<ion-header>
-  <ion-toolbar color="primary">
+<ion-header no-border>
+  <ion-toolbar>
     <ion-buttons slot="start">
       <ion-button (click)="onDismiss()">
         <ion-icon slot="icon-only" name="close"></ion-icon>
       </ion-button>
     </ion-buttons>
 
-    <ion-title class="ion-text-center">New Memory</ion-title>
+    <ion-title class="ion-text-center">New Tag</ion-title>
 
     <ion-buttons slot="end">
       <ion-button (click)="onSave()">
@@ -16,5 +16,8 @@
   </ion-toolbar>
 </ion-header>
 <ion-content>
-  <app-memory-input [memory]="memory" ></app-memory-input>
+  <ion-item>
+    <ion-label position="floating">Tag Title</ion-label>
+    <ion-input [value]="newTag" autocomplete="on" (input)="newTag = $event.target.value"></ion-input>
+  </ion-item>
 </ion-content>

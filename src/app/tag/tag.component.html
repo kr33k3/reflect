@@ -1,7 +1,7 @@
 <div style="display: flex; flex-wrap: wrap;">
-    <ion-chip *ngFor="let tag of tags">
+    <ion-chip *ngFor="let tag of tags; let i = index">
         <ion-label color="primary">{{tag}}</ion-label>
-        <ion-icon name="close-circle" (click)="logStuff()"></ion-icon>
+        <ion-icon name="close-circle" (click)="removeTag(i)"></ion-icon>
     </ion-chip>
     <ion-button fill="clear" (click)="addNewTag()"><ion-icon slot="icon-only" name="add"></ion-icon></ion-button>
 </div>

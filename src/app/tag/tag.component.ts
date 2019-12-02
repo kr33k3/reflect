@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ModalController } from '@ionic/angular';
-import { MemoryNewComponent } from '../memory/memory-new/memory-new.component';
+import { NewTagComponent } from './new-tag/new-tag.component';
 
 @Component({
   selector: 'app-tag',
@@ -22,12 +22,27 @@ export class TagComponent implements OnInit {
 
   async addNewTag() {
     const modal = await this.modalController.create({
-      component: MemoryNewComponent,
+      component: NewTagComponent,
       cssClass: 'tag-input-modal'
     })
 
-    return await modal.present();
+    modal.onDidDismiss().then(tag => {
+      if(tag.data) {
+        console.log(tag.data)
+        this.tags.push(tag.data)
+        return
+      }
+      console.log('No Data returned')
+    })
 
+    return await modal.present();
+  }
+
+  removeTag(index: number) {
+    console.log(index)
+    console.log(this.tags)
+    this.tags.splice(index, 1)
+    console.log(this.tags)
   }
 
 }
