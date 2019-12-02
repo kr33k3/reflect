@@ -10,6 +10,7 @@ import { ContentInputComponent } from '../content/content-input/content-input.co
 
 import { ViewPage } from '../view/view.page';
 import { MemoryNewComponent } from './memory-new/memory-new.component';
+import { TagComponent } from '..//tag/tag.component';
 
 const routes: Routes = [
    {
@@ -26,6 +27,6 @@ const routes: Routes = [
     RouterModule.forChild(routes),
     ReactiveFormsModule
   ],
-  declarations: [ ContentInputComponent, MemoryInputComponent, MemoryNewComponent ]
+  declarations: [ ContentInputComponent, MemoryInputComponent, MemoryNewComponent, TagComponent ]
 })
 export class MemoryModule {}
