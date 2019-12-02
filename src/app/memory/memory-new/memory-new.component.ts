@@ -17,7 +17,8 @@ export class MemoryNewComponent implements OnInit {
       PageEnd: null,
       ContentList: [{Title: '', Body:'', Attachments: [], Tags: []}],
       DateCreated: new Date(),
-      Type: ''
+      Type: '',
+      Tags: []
     }
   }
 

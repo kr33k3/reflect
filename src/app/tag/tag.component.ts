@@ -8,7 +8,7 @@ import { NewTagComponent } from './new-tag/new-tag.component';
   styleUrls: ['./tag.component.scss'],
 })
 export class TagComponent implements OnInit {
-  @Input() tags= ['Primary', 'Secondary', 'Tertiary'];
+  @Input() tags: string[];
   constructor(private modalController: ModalController) { }
 
   ngOnInit() {

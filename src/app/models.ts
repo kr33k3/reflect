@@ -3,6 +3,7 @@
     PageStart: number;
     PageEnd: number;
     Type: string;
+    Tags: string[];
     ContentList: Content[];
     DateCreated: Date;
   }
@@ -11,7 +12,7 @@
     Title: string;
     Body: string;
     Attachments: Attachment[];
-    Tags: Link[];
+    Tags: string[];
   }
   
   export interface Attachment {
