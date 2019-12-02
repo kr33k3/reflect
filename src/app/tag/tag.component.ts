@@ -1,4 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { ModalController } from '@ionic/angular';
+import { MemoryNewComponent } from '../memory/memory-new/memory-new.component';
 
 @Component({
   selector: 'app-tag',
@@ -7,7 +9,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class TagComponent implements OnInit {
   @Input() tags= ['Primary', 'Secondary', 'Tertiary'];
-  constructor() { }
+  constructor(private modalController: ModalController) { }
 
   ngOnInit() {
     console.log('Tag Component initialization ')
@@ -16,6 +18,16 @@ export class TagComponent implements OnInit {
 
   logStuff() {
     console.log('Logged chip')
+  }
+
+  async addNewTag() {
+    const modal = await this.modalController.create({
+      component: MemoryNewComponent,
+      cssClass: 'tag-input-modal'
+    })
+
+    return await modal.present();
+
   }
 
 }
