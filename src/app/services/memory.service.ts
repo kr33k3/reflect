@@ -7,8 +7,13 @@ import { Memory } from '../models';
 })
 export class MemoryService {
 
-  constructor(private storage: Storage) { 
-    this.storage.set('memories', this.generateMemories(3))
+  constructor(private storage: Storage) {
+    this.getMemories().then(data =>
+      {
+        if (!data) {
+          this.storage.set('memories', [])
+        }
+      })
   }
 
   addMemories(memory: Memory) {

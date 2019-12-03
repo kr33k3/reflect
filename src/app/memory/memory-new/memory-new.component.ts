@@ -12,7 +12,7 @@ export class MemoryNewComponent implements OnInit {
   memory: Memory
   constructor(private modalController: ModalController) { 
     this.memory = {
-      Title: 'Memory New',
+      Title: '',
       PageStart: null,
       PageEnd: null,
       ContentList: [{Title: '', Body:'', Attachments: [], Tags: []}],
