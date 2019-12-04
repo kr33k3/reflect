@@ -32,4 +32,12 @@ export class ContentInputComponent implements OnInit {
     }
   }
 
+  save() {
+    //TODO: save to parents list
+  }
+
+  remove() {
+    //TODO: remove from parents list
+  }
+
 }
