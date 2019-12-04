@@ -31,9 +31,9 @@ export class MemoryService {
     return this.storage.get('memories')
   }
 
-  private generateMemories(count: Number) {
+  private generateMemories(count: number) {
     var memories = []
-    for (var i = 0; i < count; i++) {
+    for (let i = 0; i < count; i++) {
       memories.push(this.generateMemory())
     }
     return memories

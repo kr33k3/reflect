@@ -10,7 +10,7 @@ import { Memory } from '../../models';
 })
 export class MemoryNewComponent implements OnInit {
   memory: Memory
-  constructor(private modalController: ModalController) { 
+  constructor(private modalController: ModalController) {
     this.memory = {
       Title: '',
       PageStart: null,
