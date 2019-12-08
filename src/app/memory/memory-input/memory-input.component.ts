@@ -11,12 +11,10 @@ import { Title } from '@angular/platform-browser';
 })
 export class MemoryInputComponent implements OnInit {
   @Input() memory: Memory
-  contentList: Content[];
   memoryForm: FormGroup;
 
 
   constructor(private formBuilder: FormBuilder) {
-       
    }
 
   ngOnInit() {
@@ -27,7 +25,7 @@ export class MemoryInputComponent implements OnInit {
       'PageEnd': [this.memory.PageEnd, Validators.required],
       'ContentList': [this.memory.ContentList, Validators.required],
       'DateCreated': [this.memory.DateCreated, Validators.required]
-    })  
+    })
     this.onChanged()
   }
 
@@ -39,6 +37,11 @@ export class MemoryInputComponent implements OnInit {
       Attachments: [],
       Tags: []
     });
+   }
+
+   removeContent(index) {
+     console.log(this.memory.ContentList[index])
+     this.memory.ContentList.splice(index, 1)
    }
 
    onChanged() {

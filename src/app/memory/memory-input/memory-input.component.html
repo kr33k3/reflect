@@ -13,7 +13,7 @@
       <ion-input formControlName="PageEnd" type="number"></ion-input>
     </ion-item>
     <app-tag [tags]="memory.Tags"></app-tag>
-    <app-content-input *ngFor="let content of memory.ContentList" preview="false" [content]="content"></app-content-input>
+    <app-content-input *ngFor="let content of memory.ContentList; let i = index;" preview="false" [content]="content" [index]="i"  (removeContent)="removeContent($event)"></app-content-input>
   </form>
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
       <ion-fab-button (click)="addContent()" color="secondary">
