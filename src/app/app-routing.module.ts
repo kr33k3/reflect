@@ -6,7 +6,7 @@ const routes: Routes = [
   { path: 'intro', loadChildren: './intro/intro.module#IntroPageModule' },
   { path: 'view', loadChildren: './view/view.module#ViewPageModule' },
   { path: 'input', loadChildren: './memory/memory.module#MemoryModule'}
-]
+];
 
 @NgModule({
   imports: [

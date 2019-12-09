@@ -66,7 +66,8 @@ export class ViewPage implements OnInit {
         console.log('No Memory Returned')
         return
       }
-      //this.memoryService.addMemories(data.data).then(() => this.refreshMemories())
+      // TODO: Make update memories
+      // this.memoryService.addMemories(data.data).then(() => this.refreshMemories())
     })
     return await modal.present();
   }

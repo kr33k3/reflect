@@ -1,10 +1,8 @@
 <ion-toolbar>
   <div style="display:flex; flex-direction: row;">
     <ion-searchbar  (ionChange)="logChange($event)"></ion-searchbar>
-    <ion-select style="width: 50%;">
-      <ion-select-option>helo</ion-select-option>
-      <ion-select-option>helo</ion-select-option>
-      <ion-select-option>helo</ion-select-option>
+    <ion-select style="width: 50%;" value="Most Recent">
+      <ion-select-option *ngFor="let item of sortOptions;">{{item}}</ion-select-option>
     </ion-select>
   </div>
   

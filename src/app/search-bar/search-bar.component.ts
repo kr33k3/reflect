@@ -22,9 +22,17 @@ export class SearchBarComponent implements OnInit {
         }
       ]
     }
+  ];
+
+  sortOptions = [
+    'Newest',
+    'Oldest',
+    'Most Recent',
+    'Less Recent'
   ]
 
-  ngOnInit() {}
+  ngOnInit() {
+  }
 
 
   logChange(event) {
