@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { PickerController } from '@ionic/angular';
 
 @Component({
@@ -31,13 +31,27 @@ export class SearchBarComponent implements OnInit {
     'Less Recent'
   ]
 
+  @Output()
+  sortMemoriesEvent = new EventEmitter<string>();
+  
+  @Output() 
+  filterMemoriesEvent = new EventEmitter<string>();
+
   ngOnInit() {
   }
 
 
   logChange(event) {
-    console.log(event)
-    console.log(event.target.value)
+    console.log(event);
+    console.log(event.target.value);
+  }
+
+  sortOrderChange(event) {
+    this.sortMemoriesEvent.emit(event.target.value);
+  }
+
+  filterMemory(event) {
+   this.filterMemoriesEvent.emit(event.target.value);
   }
 
   async openFilterPicker() {

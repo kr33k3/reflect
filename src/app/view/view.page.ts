@@ -12,10 +12,10 @@ import { MemoryViewComponent } from '../memory/memory-view/memory-view.component
 })
 export class ViewPage implements OnInit {
   memories: Memory[]
-  displaySearchBar = true;
-  constructor(private memoryService: MemoryService, private modalController: ModalController) {
+  displaySearchBar = false;
+  memoriesToDisplay: Memory[]
 
-   }
+  constructor(private memoryService: MemoryService, private modalController: ModalController) {}
 
   ngOnInit() {
      this.refreshMemories();
@@ -34,8 +34,8 @@ export class ViewPage implements OnInit {
     modal.onDidDismiss().then((data) =>
     {
       if (data.data == null) {
-        console.log('No Memory Returned')
-        return
+        console.log('No Memory Returned');
+        return;
       }
       this.memoryService.addMemories(data.data).then(() => this.refreshMemories())
     })
@@ -45,6 +45,9 @@ export class ViewPage implements OnInit {
   refreshMemories() {
     this.memoryService.getMemories().then(data => {
       this.memories = data;
+      if (this.memoriesToDisplay == null) {
+        this.memoriesToDisplay = data;
+      }
       console.log(data);
     })
   }
@@ -56,7 +59,7 @@ export class ViewPage implements OnInit {
   async viewMemory(memory) {
     const modal = await this.modalController.create({
       component: MemoryViewComponent,
-      componentProps: {memory: memory},
+      componentProps: {memory},
       cssClass: 'memory-input-modal'
     })
 
@@ -70,6 +73,20 @@ export class ViewPage implements OnInit {
       // this.memoryService.addMemories(data.data).then(() => this.refreshMemories())
     })
     return await modal.present();
+  }
+
+  sortMemories(event) {
+    console.log(event)
+  }
+
+  filterMemories(event) {
+    console.log(event)
+    var filteredMemories = this.memories.filter( x=> {
+      var index = x.Tags.findIndex( y => { return y == event})
+      return index != -1
+    })
+    console.log(filteredMemories)
+    this.memoriesToDisplay = event == '' ? this.memories : filteredMemories;
   }
 
   toggleSearchBar() {

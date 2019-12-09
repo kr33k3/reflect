@@ -10,12 +10,12 @@
       <ion-button (click)="toggleSearchBar()"><ion-icon name="funnel" slot="icon-only"></ion-icon></ion-button>
     </ion-buttons>
   </ion-toolbar>
-  <app-search-bar *ngIf="displaySearchBar"></app-search-bar>
+  <app-search-bar *ngIf="displaySearchBar" (sortMemoriesEvent)="sortMemories($event)" (filterMemoriesEvent)="filterMemories($event)"></app-search-bar>
 </ion-header>
 
 <ion-content>
 
-  <ion-card *ngFor="let memory of memories" (click)="openView(memory)">
+  <ion-card *ngFor="let memory of memoriesToDisplay" (click)="openView(memory)">
     <ion-card-header>
       <ion-card-subtitle>pages: {{memory.PageStart}}-{{memory.PageEnd}}</ion-card-subtitle>
       <ion-card-title>{{memory.Title}}</ion-card-title>
