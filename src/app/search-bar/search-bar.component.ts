@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PickerController } from '@ionic/angular';
 
 @Component({
   selector: 'app-search-bar',
@@ -6,9 +7,47 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./search-bar.component.scss'],
 })
 export class SearchBarComponent implements OnInit {
-
-  constructor() { }
+  constructor(private pickerController: PickerController) { }
+  sortItemOptions = [
+      {
+        name: 'Sort Item',
+        options: [
+        {
+          text: 'Ranking',
+          value: 'ranking'
+        },
+        {
+          text: 'Date Created',
+          value: 'dateCreated'
+        }
+      ]
+    }
+  ]
 
   ngOnInit() {}
 
+
+  logChange(event) {
+    console.log(event)
+    console.log(event.target.value)
+  }
+
+  async openFilterPicker() {
+    const picker = await this.pickerController.create({
+      columns: this.sortItemOptions,
+      buttons: [
+        {
+          text: 'Cancel',
+          role: 'cancel'
+        },
+        {
+          text: 'Confirm',
+          handler: (value) => {
+            console.log(value);
+          }
+        }
+      ]
+    });
+    await picker.present();
+  }
 }

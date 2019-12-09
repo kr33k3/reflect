@@ -1,7 +1,9 @@
+import { SearchBarComponent } from './../search-bar/search-bar.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
+
 import { MemoryModule } from '../memory/memory.module';
 
 
@@ -25,7 +27,7 @@ const routes: Routes = [
     RouterModule.forChild(routes),
     MemoryModule
   ],
-  declarations: [ViewPage],
+  declarations: [ViewPage, SearchBarComponent],
   entryComponents: [MemoryNewComponent]
 })
 export class ViewPageModule {}

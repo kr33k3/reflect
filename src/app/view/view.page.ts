@@ -12,6 +12,7 @@ import { MemoryViewComponent } from '../memory/memory-view/memory-view.component
 })
 export class ViewPage implements OnInit {
   memories: Memory[]
+  displaySearchBar = true;
   constructor(private memoryService: MemoryService, private modalController: ModalController) {
 
    }
@@ -68,6 +69,10 @@ export class ViewPage implements OnInit {
       //this.memoryService.addMemories(data.data).then(() => this.refreshMemories())
     })
     return await modal.present();
+  }
+
+  toggleSearchBar() {
+    this.displaySearchBar = !this.displaySearchBar;
   }
 
 }
