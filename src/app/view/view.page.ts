@@ -81,12 +81,12 @@ export class ViewPage implements OnInit {
 
   filterMemories(event) {
     console.log(event)
-    var filteredMemories = this.memories.filter( x=> {
-      var index = x.Tags.findIndex( y => { return y == event})
-      return index != -1
+    const filteredMemories = this.memories.filter( x => {
+      const tagIndex = x.Tags.findIndex( y => y == event)
+      return tagIndex != -1
     })
     console.log(filteredMemories)
-    this.memoriesToDisplay = event == '' ? this.memories : filteredMemories;
+    this.memoriesToDisplay = event === '' ? this.memories : filteredMemories;
   }
 
   toggleSearchBar() {
