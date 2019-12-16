@@ -18,16 +18,10 @@ def CreateTag(template):
     template.title = template.title.strip()
     old_tag = session.query(Tag).filter(Tag.title==template.title).first()
     if old_tag is not None:
-       return old_tag
+        return old_tag
     new_tag = Tag(id=New_UUID(), title=template.title)
     session.add(new_tag)
     return SafeCommit(new_tag)
-
-def GetTag(template):
-    tag = session.query(Tag).filter(Tag.id==template.id).first()
-    if tag is None:
-        return Error("Tag not found! ID: " + template.id)
-    return tag
 
 def GetTag_CreateTag(template):
     if template.id is None:
@@ -37,5 +31,11 @@ def GetTag_CreateTag(template):
 
 def GetAllTags():
     return session.query(Tag).all()
+
+def GetTag(template):
+    tag = session.query(Tag).filter(Tag.id==template.id).first()
+    if tag is None:
+        return Error("Tag not found! ID: " + template.id)
+    return tag
 
 print("TagView End")
